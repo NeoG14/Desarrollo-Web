@@ -1,0 +1,76 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contacto {
+    background-color: v.$mas_claro;
+    h3 {
+        padding-top: 2rem;
+    }
+}
+.contacto-bg {
+    background-image: url(../img/contact.jpg);
+    height: 40rem;
+    background-repeat: no-repeat;
+    @include m.telefono {
+        background-position: right center;
+    }
+    @include m.tablet {
+        background-position: bottom center;
+        background-size: cover;
+    }   
+}
+
+.formulario {
+    background-color: v.$mas_claro;
+    margin: -12rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+
+}
+.campo {
+    @include m.telefono {
+        display: block;
+        margin: 0 auto;
+    } 
+    @include m.tablet {
+        display: flex;
+        margin-bottom: 2rem;
+        gap: 2rem;
+    }
+    
+}
+.campo__label{
+     @include m.telefono {
+        display: block;
+        text-align: left;
+    }
+    @include m.desktop {
+        flex: 0 0 9rem;
+        text-align: right;
+        line-height: 2;
+    }
+} 
+.campo__field {
+    flex: 1;
+    border: 1px solid #ccc7c7;
+    @include m.telefono {
+        width: 100%;
+    }
+}
+.campo__field--textarea{
+    height: 10rem;
+    @include m.telefono {
+        height: 20rem;
+    }
+}
+
+.boton {
+    padding: 1rem 2rem;
+    background-color: v.$azul_oscuro;
+    color: v.$blanco;
+    font-weight: bold;
+    font-size: 2rem;
+    &:hover {
+        cursor: pointer;
+    }
+}
